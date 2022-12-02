@@ -1,20 +1,16 @@
-//
-// Created by Jeremy Dos santos on 12/1/22.
-//
-
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
-
+# include "Contact.hpp"
 
 class PhoneBook
 {
 	public:
-		void	add_contact;
-		PhoneBook();
+		PhoneBook(void);
+		void	add_contact(void);
+		void	search_contact(void);
 	private:
 		Contact contact[8];
 		int		len_max;
 };
 
-
-#endifzz
+#endif
