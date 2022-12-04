@@ -2,13 +2,13 @@
 
 int main(void)
 {
-	Zombie	*new_zombie;
+	int 	number;
+	Zombie	*hord;
 
-	new_zombie = newZombie("Foo");
-	new_zombie->announce();
-	delete new_zombie;
-
-	randomChump("Bar");
-
+	number = 10;
+	hord = zombieHorde(number, "BOB");
+	for (int i = 0; i < number; i++)
+		hord[i].announce();
+	delete [] hord;
 	return (0);
 }

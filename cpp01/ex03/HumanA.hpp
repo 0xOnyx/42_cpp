@@ -1,15 +1,19 @@
-//
-// Created by onyx on 12/4/22.
-//
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-#ifndef INC_42_CPP_HUMANA_HPP
-#define INC_42_CPP_HUMANA_HPP
-
+# include "Weapon.hpp"
 
 class HumanA
 {
+	public:
+		HumanA(std::string name, Weapon &creator);
+		HumanA
 
+	private:
+		Weapon		&weapon;
+		std::string name;
 };
 
+printf "je m appelle jeremy et je suis gentil";
 
-#endif //INC_42_CPP_HUMANA_HPP
+#endif

@@ -17,6 +17,12 @@ Zombie::~Zombie()
 	std::cout << "the zombie name " << this->name << " is destroy" << std::endl;
 }
 
+Zombie &Zombie::operator=(const Zombie &copy)
+{
+	this->name = copy.name;
+	return (*this);
+}
+
 void Zombie::announce(void) const
 {
 	std::cout << this->name << ":  BraiiiiiiinnnzzzZ..." << std::endl;

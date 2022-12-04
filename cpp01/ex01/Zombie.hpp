@@ -6,9 +6,11 @@
 class Zombie
 {
 	public:
+		Zombie(){};
 		Zombie(std::string name);
 		Zombie(const Zombie &copy);
 		~Zombie(void);
+		Zombie &operator=(const Zombie &copy);
 		void 	announce(void) const;
 	private:
 		std::string	name;
@@ -16,5 +18,6 @@ class Zombie
 
 void	randomChump(std::string name);
 Zombie	*newZombie(std::string	name);
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif
