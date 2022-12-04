@@ -1,6 +1,8 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 # include "Contact.hpp"
+# include <iostream>
+# include <sstream>
 
 class PhoneBook
 {
@@ -11,6 +13,7 @@ class PhoneBook
 	private:
 		Contact contact[8];
 		int		len_max;
+		int 	current;
 };
 
 #endif

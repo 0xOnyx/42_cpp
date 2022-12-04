@@ -6,12 +6,13 @@
 void	get_command(std::string &command)
 {
 	std::cout << NAME;
-	std::getline(std::cin, command);
+	while (command.empty())
+		std::getline(std::cin, command);
 }
 
 bool	exec_command(std::string &command, int &end, PhoneBook &book)
 {
-	if (!command.compare("END"))
+	if (!command.compare("EXIT"))
 	{
 		end = 0;
 		return (false);
@@ -40,11 +41,9 @@ int main(void)
 	{
 		get_command(command);
 		if (exec_command(command, end, book))
-		{
-			std::cerr << "[ERROR]\terror during process \n" << std::endl;
-			return (1);
-		}
+			std::cerr << "[ERROR]\tthis is not a command" << std::endl;
+		command.resize(0);
 	}
-	std::cout << "[INFO]\tend of the process\n" << std::endl;
+	std::cout << "[INFO]\tend of the process" << std::endl;
 	return (0);
 }

@@ -1,11 +1,11 @@
-NAME = phonebook
+NAME = Zombie
 
-SRC = PhoneBook.cpp Contact.cpp main.cpp
-HEADER = phonebook.hpp contact.hpp
+SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+HEADER = Zombie.hpp
 
 OBJS = $(SRC:.cpp=.o)
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -O3 -g3
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -O3
 CC = c++
 RM = rm -rf
 

@@ -19,20 +19,15 @@ bool	Contact::set_nickname(const std::string str)
 	return (true);
 }
 
-bool	check_cond(char c)
-{
-	if (isdigit(c) || c == ' ')
-		return (true);
-	return (false);
-}
-
 bool	Contact::set_phone_number(const std::string str)
 {
-	std::string::const_iterator end;
+	std::string::const_iterator current;
 
-	end = std::find_if(str.begin(), str.end(), check_cond);
-	if (end != str.end())
-		return (false);
+	for (current = str.begin(); current != str.end(); current++)
+	{
+		if (!isdigit(*current) && *current != ' ')
+			return (false);
+	}
 	this->phone_number = str;
 	return (true);
 }
