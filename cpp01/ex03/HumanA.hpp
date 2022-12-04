@@ -6,14 +6,14 @@
 class HumanA
 {
 	public:
-		HumanA(std::string name, Weapon &creator);
-		HumanA
-
+		HumanA(std::string name_to_set, Weapon &weapon_to_set);
+		HumanA(conat HumanA &humanA);
+		~HumanA();
+		HumanA	&operator=(const HumanA&);
+		void	attack();
 	private:
 		Weapon		&weapon;
 		std::string name;
 };
-
-printf "je m appelle jeremy et je suis gentil";
 
 #endif

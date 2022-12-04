@@ -9,7 +9,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -O3
 CC = c++
 RM = rm -rf
 
-all: $NAME
+all: $(NAME)
 
 %.o: %.cpp $(HEADER)
 	$(CC) $(CXXFLAGS) -o $(@) -c $(<)
