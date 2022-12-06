@@ -7,9 +7,9 @@ class HumanA
 {
 	public:
 		HumanA(std::string name_to_set, Weapon &weapon_to_set);
-		HumanA(conat HumanA &humanA);
+		HumanA(const HumanA &humanA);
 		~HumanA();
-		HumanA	&operator=(const HumanA&);
+		HumanA	&operator=(const HumanA& human_a);
 		void	attack();
 	private:
 		Weapon		&weapon;
