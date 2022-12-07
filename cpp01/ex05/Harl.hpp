@@ -1,14 +1,18 @@
-//
-// Created by onyx on 12/6/22.
-//
-
-#ifndef INC_42_CPP_HARL_H
-#define INC_42_CPP_HARL_H
-
+#ifndef HARL_HPP
+# define HARL_HPP
+# include <string>
 
 class Harl {
-
+	public:
+		Harl();
+		~Harl();
+		void	complain(std::string level);
+	private:
+		void	debug(void);
+		void 	info(void);
+		void 	warning(void);
+		void 	error(void);
+		void 	(*f[4])(void);
 };
 
-
-#endif //INC_42_CPP_HARL_H
+#endif

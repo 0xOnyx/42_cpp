@@ -1,5 +1,6 @@
-//
-// Created by onyx on 12/6/22.
-//
+#include "Harl.hpp"
 
-#include "Harl.h"
+Harl::Harl()
+{
+	this->f[0] = &Harl::debug;
+}
