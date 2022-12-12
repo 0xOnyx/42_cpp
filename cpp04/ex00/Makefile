@@ -1,7 +1,7 @@
-NAME  = clap
+NAME  = Animal
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
-HEADER = ClapTrap.hpp ScavTrap.hpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+HEADER = Animal.hpp Dog.hpp Cat.hpp
 OBJS = $(SRC:.cpp=.o)
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -O3

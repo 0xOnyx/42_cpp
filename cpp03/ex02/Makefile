@@ -1,7 +1,7 @@
 NAME  = clap
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
-HEADER = ClapTrap.hpp ScavTrap.hpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+HEADER = ClapTrap.hpp ScavTrap.hpp FragTrapp.hpp
 OBJS = $(SRC:.cpp=.o)
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -O3

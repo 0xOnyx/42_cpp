@@ -2,17 +2,17 @@
 
 ClapTrap::ClapTrap() :name(""), hits_points(10), energy_points(10), attack_damage(0)
 {
-	std::cout << "Default constructor ClapTrap called" << std::endl;
+	std::cout << "default constructor ClapTrap called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string set_name) :name(set_name), hits_points(10), energy_points(10), attack_damage(0)
 {
-	std::cout << "String constructor ClapTrap called" << std::endl;
+	std::cout << "String constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor ClapTrap called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &copy)
@@ -28,7 +28,7 @@ void	ClapTrap::attack(const std::string &target)
 {
 	if (this->energy_points <= 0 || this->hits_points <= 0)
 	{
-		std::cout << "ClapTrap " << this->name << " has no energy or no point left" << std::endl;
+		std::cout << "ClapTrap " << this->name << " has energy point left" << std::endl;
 		return ;
 	}
 	this->energy_points -= 1;
@@ -40,7 +40,7 @@ void 	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->energy_points <= 0 || this->hits_points <= 0)
 	{
-		std::cout << "ClapTrap " << this->name << " has no energy or no point left" << std::endl;
+		std::cout << "ClapTrap " << this->name << " has dead" << std::endl;
 		return ;
 	}
 	this->hits_points -= amount;
@@ -52,7 +52,7 @@ void 	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->energy_points <= 0 || this->hits_points <= 0)
 	{
-		std::cout << "ClapTrap " << this->name << " has no energy or no point left" << std::endl;
+		std::cout << "ClapTrap " << this->name << " has energy point left" << std::endl;
 		return ;
 	}
 	this->energy_points -= 1;
