@@ -1,15 +1,22 @@
-//
-// Created by onyx on 12/15/22.
-//
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
+# include "Form.hpp"
+# include <string>
+# include "Bureaucrat.hpp"
 
-#ifndef INC_42_CPP_SHRUBBERYCREATIONFORM_HPP
-#define INC_42_CPP_SHRUBBERYCREATIONFORM_HPP
+class Bureaucrat;
 
-
-class ShrubberyCreationForm
+class ShrubberyCreationForm : public Form
 {
-
+public:
+	ShrubberyCreationForm();
+	ShrubberyCreationForm(const ShrubberyCreationForm &shrubberyCreationForm);
+	ShrubberyCreationForm(std::string set_target);
+	~ShrubberyCreationForm();
+	ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &copy);
+	void execute(Bureaucrat const &executor) const;
+private:
+	std::string target;
 };
 
-
-#endif //INC_42_CPP_SHRUBBERYCREATIONFORM_HPP
+#endif
