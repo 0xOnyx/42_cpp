@@ -81,6 +81,19 @@ const char	*Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Grade is to Low !");
 }
 
+void 	Bureaucrat::executeForm(Form const &form) const
+{
+	try
+	{
+		form.checkExecutability(*this);
+		form.execute(*this);
+	}
+	catch(std::exception const &e)
+	{
+
+	}
+}
+
 std::ostream	&operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
 {
 	os << bureaucrat.get_name() << ", bureaucrat grade " << bureaucrat.get_grade() << ".";

@@ -15,7 +15,8 @@ public:
 	Form(const Form &form);
 	~Form();
 	Form	&operator=(const Form &form);
-	virtual void execute(Bureaucrat const	&executor) = 0;
+	virtual void execute(Bureaucrat const	&executor) = 0 const;
+	void	checkExecutability(Bureaucrat const &executor) const;
 	const std::string	&get_name() const;
 	bool	get_sign() const;
 	int		get_grade_sign() const;
@@ -30,6 +31,11 @@ public:
 	{
 		public:
 			virtual const char	*what() const throw();
+	};
+	class	FormNotSignedException: public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
 	};
 private:
 	const std::string	name;
