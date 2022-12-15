@@ -19,5 +19,20 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &robotomyRequ
 	:Form("Robotomy", 72, 45),
 	target(robotomyRequestForm.target)
 {
-	std::cout <<
+	std::cout << "Operator affection Robotomy called" << std::endl;
 }
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+	std::cout << "Destructor Robotomy called" << std::endl;
+}
+
+RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
+{
+	this->target = copy.target;
+}
+
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
+{
+
+

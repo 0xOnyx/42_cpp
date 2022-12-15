@@ -30,7 +30,7 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copy)
 {
 	this->name = copy.name;
 	this->grade = copy.grade;
-	std::cout << "Operator affection called" << std::endl;
+	std::cout << "Operator affection Bureaucrat called" << std::endl;
 	return (*this);
 }
 

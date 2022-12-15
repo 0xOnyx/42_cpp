@@ -1,7 +1,8 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
-# include "Form.hpp"
 # include <string>
+# include <fstream>
+# include "Form.hpp"
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;

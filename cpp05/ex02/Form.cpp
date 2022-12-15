@@ -30,7 +30,7 @@ Form	&Form::operator=(const Form &form)
 {
 	this->is_sign = form.is_sign;
 	std::cout << "Only is sign is copy" << std::endl;
-	std::cout << "Operator affectation is called" << std::endl;
+	std::cout << "Operator affectation Form is called" << std::endl;
 	return (*this);
 }
 
