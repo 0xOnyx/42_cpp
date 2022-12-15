@@ -3,8 +3,8 @@
 void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
 	std::ofstream	os;
-	this->checkExecutability(executor);
 
+	this->checkExecutability(executor);
 	os.open((this->target + "_shrubbery").c_str(), std::ofstream::out);
 	if (os.is_open())
 	{
