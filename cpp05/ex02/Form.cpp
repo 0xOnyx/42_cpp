@@ -64,7 +64,7 @@ void	Form::beSigned(Bureaucrat const &bureaucrat)
 
 void	Form::checkExecutability(Bureaucrat const &excutor) const
 {
-	if (this->is_sign)
+	if (!this->is_sign)
 		throw Form::FormNotSignedException();
 	if (excutor.get_grade() > this->grade_exec)
 		throw Form::GradeTooLowException();

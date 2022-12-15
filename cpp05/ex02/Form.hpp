@@ -15,7 +15,7 @@ public:
 	Form(const Form &form);
 	~Form();
 	Form	&operator=(const Form &form);
-	virtual void execute(Bureaucrat const	&executor) = 0 const;
+	virtual void execute(Bureaucrat const	&executor) const = 0;
 	void	checkExecutability(Bureaucrat const &executor) const;
 	const std::string	&get_name() const;
 	bool	get_sign() const;

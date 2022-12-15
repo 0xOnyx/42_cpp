@@ -85,8 +85,8 @@ void 	Bureaucrat::executeForm(Form const &form) const
 {
 	try
 	{
-		form.execute(*this);
 		std::cout << this->name << " executed " << form.get_name() << std::endl;
+		form.execute(*this);
 	}
 	catch(std::exception const &e)
 	{

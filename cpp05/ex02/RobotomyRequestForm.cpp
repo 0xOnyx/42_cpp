@@ -19,7 +19,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &robotomyRequ
 	:Form("Robotomy", 72, 45),
 	target(robotomyRequestForm.target)
 {
-	std::cout << "Operator affection Robotomy called" << std::endl;
+	std::cout << "Copy Robotomy called" << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
@@ -30,6 +30,8 @@ RobotomyRequestForm::~RobotomyRequestForm()
 RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
 {
 	this->target = copy.target;
+	std::cout << "Operator affection Robotomy is called" << std::endl;
+	return (*this);
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
@@ -37,7 +39,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	bool	sucess;
 
 	this->checkExecutability(executor);
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	sucess = std::rand() % 1 == 0;
 	std::cout << "Make drill noise BRTTTTTT" << std::endl;
 	if (sucess)

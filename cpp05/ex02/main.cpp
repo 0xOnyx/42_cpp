@@ -1,71 +1,73 @@
-#include "Bureaucrat.hpp"
 #include <exception>
 #include <iostream>
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void)
 {
-	try
-	{
-		Bureaucrat bureaucrat("Foo", 1);
-		bureaucrat.increment();
+	try{
+		Bureaucrat foo("foo", 1);
+		PresidentialPardonForm form("bar");
+
+		foo.signForm(form);
+		foo.executeForm(form);
 	}
-	catch(std::exception &e)
+	catch(std::exception const &e)
 	{
 		std::cerr << "[ERROR]\t" << e.what() << std::endl;
 	}
 
-	try
-	{
-		Bureaucrat bureaucrat("Foo", 400);
+	try{
+		Bureaucrat foo("foo", 150);
+		PresidentialPardonForm form("bar");
+
+		foo.signForm(form);
+		foo.executeForm(form);
 	}
-	catch(std::exception &e)
+	catch(std::exception const &e)
 	{
 		std::cerr << "[ERROR]\t" << e.what() << std::endl;
 	}
 
-	try
-	{
-		Bureaucrat bureaucrat("Foo", 149);
-		bureaucrat.decrement();
-		bureaucrat.decrement();
+	try{
+		Bureaucrat foo("foo", 2);
+		RobotomyRequestForm form("bar");
+
+		foo.signForm(form);
+		foo.executeForm(form);
 	}
-	catch(Bureaucrat::GradeTooLowException &e)
+	catch(std::exception const &e)
 	{
 		std::cerr << "[ERROR]\t" << e.what() << std::endl;
 	}
 
-	try
-	{
-		Form form("CP1", 0, 1);
+	try{
+		Bureaucrat foo("foo", 150);
+		RobotomyRequestForm form("bar");
+
+		foo.signForm(form);
+		foo.executeForm(form);
 	}
-	catch(std::exception &e)
+	catch(std::exception const &e)
 	{
 		std::cerr << "[ERROR]\t" << e.what() << std::endl;
 	}
 
-	try
-	{
-		Bureaucrat bureaucrat("Bar", 10);
-		Form form("CP2", 3, 3);
+	try{
+		Bureaucrat foo("foo1", 1);
+		ShrubberyCreationForm form("bar2");
 
-		bureaucrat.signForm(form);
+		foo.signForm(form);
+		foo.executeForm(form);
 	}
-	catch(std::exception &e)
+	catch(std::exception const &e)
 	{
 		std::cerr << "[ERROR]\t" << e.what() << std::endl;
 	}
 
-	try
-	{
-		Bureaucrat bureaucrat("Bar", 1);
-		Form form("CP3", 10, 10);
-
-		bureaucrat.signForm(form);
-	}
-	catch(std::exception &e)
-	{
-		std::cerr << "[ERROR]\t" << e.what() << std::endl;
-	}
 
 
 	return (0);
