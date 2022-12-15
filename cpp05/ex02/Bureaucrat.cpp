@@ -11,13 +11,14 @@ Bureaucrat::Bureaucrat(std::string set_name, int set_grade) :name(set_name), gra
 		throw Bureaucrat::GradeTooHighException();
 	if (this->grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	std::cout << "Copy Bureaucrat constructor called" << std::endl;
+	std::cout << "String Bureaucrat constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
 {
 	this->grade = bureaucrat.grade;
 	this->name = bureaucrat.name;
+	std::cout << "Copy Bureaucrat constructor called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -33,7 +34,20 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copy)
 	return (*this);
 }
 
-std::string	Bureaucrat::get_name() const
+void		Bureaucrat::signForm(Form &form)
+{
+	try{
+		form.beSigned(*this);
+		std::cout << this->name << " signed " << form.get_name() << std::endl;
+	}
+	catch(std::exception const &e)
+	{
+		std::cerr << this->name << " couldn’t sign "
+				  << form.get_name() << " because " << e.what() << std::endl;
+	}
+}
+
+const std::string	&Bureaucrat::get_name() const
 {
 	return (this->name);
 }

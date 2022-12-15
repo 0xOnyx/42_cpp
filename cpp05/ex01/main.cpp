@@ -13,6 +13,7 @@ int main(void)
 	{
 		std::cerr << "[ERROR]\t" << e.what() << std::endl;
 	}
+
 	try
 	{
 		Bureaucrat bureaucrat("Foo", 400);
@@ -21,6 +22,7 @@ int main(void)
 	{
 		std::cerr << "[ERROR]\t" << e.what() << std::endl;
 	}
+
 	try
 	{
 		Bureaucrat bureaucrat("Foo", 149);
@@ -31,5 +33,40 @@ int main(void)
 	{
 		std::cerr << "[ERROR]\t" << e.what() << std::endl;
 	}
+
+	try
+	{
+		Form form("CP1", 0, 1);
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << "[ERROR]\t" << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat bureaucrat("Bar", 10);
+		Form form("CP2", 3, 3);
+
+		bureaucrat.signForm(form);
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << "[ERROR]\t" << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat bureaucrat("Bar", 1);
+		Form form("CP3", 10, 10);
+
+		bureaucrat.signForm(form);
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << "[ERROR]\t" << e.what() << std::endl;
+	}
+
+
 	return (0);
 }
