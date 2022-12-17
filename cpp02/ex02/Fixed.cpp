@@ -14,7 +14,7 @@ Fixed::Fixed(const float float_nb)
 Fixed::Fixed(const int int_nb)
 {
 	this->nb = int_nb << Fixed::bits;
-	std::cout << "Int constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;;
 }
 
 Fixed::Fixed(const Fixed &fixed)
