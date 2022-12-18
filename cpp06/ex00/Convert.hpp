@@ -1,7 +1,11 @@
 #ifndef CONVERT_HPP
 # define CONVERT_HPP
 # include <string>
+# include <iostream>
+# include <sstream>
 # include <exception>
+# include <limits>
+# include <iomanip>
 
 enum	e_type
 {
@@ -11,6 +15,8 @@ enum	e_type
 	FLOAT,
 	DOUBLE
 };
+
+typedef void (*t_func)(std::string);
 
 class Convert
 {
@@ -24,9 +30,10 @@ public:
 	void print_element();
 
 private:
-	void print_char();
-	void print_int();
-	void print_float();
+	static void	print_char(std::string buff);
+	static void	print_int(std::string buff);
+	static void	print_float(std::string buff);
+	static void	print_double(std::string buff);
 	std::string str;
 	e_type		type;
 };

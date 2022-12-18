@@ -1,7 +1,6 @@
-NAME  = convertion
+NAME  = identifier
 
-SRC = Convert.cpp main.cpp
-HEADER = Convert.hpp
+SRC = main.cpp
 OBJS = $(SRC:.cpp=.o)
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -O3 -g3
@@ -10,7 +9,7 @@ RM = rm -rf
 
 all: $(NAME)
 
-%.o: %.cpp $(HEADER)
+%.o: %.cpp
 	$(CC) $(CXXFLAGS) -o $(@) -c $(<)
 
 $(NAME): $(OBJS)

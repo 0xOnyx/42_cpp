@@ -39,7 +39,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	bool	sucess;
 
 	this->checkExecutability(executor);
-	std::srand(std::time(NULL));
+	std::srand(std::time(nullptr));
 	sucess = std::rand() % 1 == 0;
 	std::cout << "Make drill noise BRTTTTTT" << std::endl;
 	if (sucess)
