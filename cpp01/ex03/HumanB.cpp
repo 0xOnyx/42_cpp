@@ -10,7 +10,7 @@ HumanB::HumanB(std::string name_to_set)
 }
 
 HumanB::HumanB(std::string name_to_set, Weapon &weapon)
-	:name(name_to_set), weapon(&weapon)
+	:weapon(&weapon), name(name_to_set)
 {
 	if (name.empty())
 		std::cerr << "please set a correct name" << std::endl;
@@ -41,5 +41,5 @@ void	HumanB::setWeapon(Weapon &weapon)
 
 void 	HumanB::attack()
 {
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+	std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
 }

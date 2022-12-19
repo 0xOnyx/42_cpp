@@ -96,7 +96,6 @@ void	PhoneBook::search_contact()
 	std::cout << "darkest_secret\t=> " << current_contact->get_darkest_secret() << std::endl;
 }
 
-
 void	get_value(const std::string prompt, Contact &contact)
 {
 	std::string buff;

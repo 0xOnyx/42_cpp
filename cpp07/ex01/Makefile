@@ -1,11 +1,10 @@
-NAME  = fixed
+NAME = template
 
-SRC = main.cpp Fixed.cpp
-HEADER = Fixed.hpp
+SRC = main.cpp
+HEADER = iter.tpp
 OBJS = $(SRC:.cpp=.o)
 
-LIB = -lm
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -O3
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -O3
 CC = c++
 RM = rm -rf
 
@@ -15,7 +14,7 @@ all: $(NAME)
 	$(CC) $(CXXFLAGS) -o $(@) -c $(<)
 
 $(NAME): $(OBJS)
-	$(CC) $(CXXFLAGS) -o $(@) $(^) $(LIB)
+	$(CC) $(CXXFLAGS) -o $(@) $(^)
 
 clean:
 	$(RM) $(OBJS)

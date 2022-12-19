@@ -9,7 +9,7 @@ public:
 	Fixed(const Fixed &fixed);
 	~Fixed(void);
 	Fixed	&operator=(const Fixed &fixed);
-	int		get_RawBits(void);
+	int		getRawBits(void);
 	void	setRawBits(int const raw);
 private:
 	int					nb;
