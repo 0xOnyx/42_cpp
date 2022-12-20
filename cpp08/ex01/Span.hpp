@@ -1,15 +1,27 @@
-//
-// Created by onyx on 12/20/22.
-//
-
-#ifndef INC_42_CPP_SPAN_HPP
-#define INC_42_CPP_SPAN_HPP
-
+#ifndef SPAN_HPP
+# define SPAN_HPP
+# include <iostream>
+# include <vector>
+# include <algorithm>
+# include <exception>
+# include <ctime>
+# include <cstdlib>
 
 class Span
 {
-
+public:
+	Span();
+	Span(unsigned int n);
+	Span(const Span &span);
+	void addNumber(int nbr);
+	int shortestSpan(void);
+	int longestSpan(void);
+	Span	&operator=(const Span &span);
+	~Span();
+	void	fill_with_rand(unsigned int nbr);
+private:
+	unsigned int		_n;
+	std::vector<int>	_tab;
 };
 
-
-#endif //INC_42_CPP_SPAN_HPP
+#endif

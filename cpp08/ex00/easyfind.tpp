@@ -2,6 +2,7 @@
 # define EASY_FIND
 # include <algorithm>
 # include <exception>
+# include <iostream>
 
 class not_found : public std::exception
 {
@@ -13,9 +14,9 @@ public:
 };
 
 template <typename T>
-typename T::iterator	easyfind(const T &tab, int value)
+typename T::const_iterator	easyfind(const T &tab, int value)
 {
-	typename T::iterator	res;
+	typename T::const_iterator res;
 
 	res = std::find(tab.begin(), tab.end(), value);
 	if (res == tab.end())
