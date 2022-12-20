@@ -23,7 +23,7 @@ void 	Convert::print_char(std::string buff)
 {
 	char c;
 
-	c = buff.at(0);
+	c = buff.at(1);
 	std::cout << "char: " << c << std::endl;
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
 	std::cout << "float: " << static_cast<float>(c) << std::endl;
@@ -45,7 +45,7 @@ void Convert::print_int(std::string buff)
 	else
 		std::cout << "char: " << "Non displayable" << std::endl;
 	std::cout << "int: " << a << std::endl;
-	std::cout << "float: " << static_cast<float>(a) << std::setprecision(2) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(a) << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(a) << std::endl;
 }
 
@@ -98,9 +98,7 @@ void Convert::print_double(std::string buff)
 		return ;
 	}
 	ss >> a;
-	if (ss.fail()
-		|| a > std::numeric_limits<double>::max()
-		|| a < std::numeric_limits<double>::min())
+	if (ss.fail())
 		throw std::exception();
 	else
 	{
@@ -109,7 +107,7 @@ void Convert::print_double(std::string buff)
 		else
 			std::cout << "char: " << "Non displayable" << std::endl;
 		std::cout << "int: " << static_cast<int>(a) << std::endl;
-		std::cout << "float: " << a << "f" << std::endl;
+		std::cout << "float: " << std::fixed << std::setprecision(1) << a << "f" << std::endl;
 		std::cout << "double: " << static_cast<double>(a) << std::endl;
 	}
 }
@@ -148,8 +146,7 @@ void	Convert::detect_type()
 		this->type = DOUBLE;
 		return ;
 	}
-	else if (str.compare("-inf"))
-	if (str.at(i) != '-' || str.at(i) != '+')
+	else if (str.at(i) == '-' || str.at(i) == '+')
 		i++;
 	for (; i < this->str.length(); i++)
 	{
