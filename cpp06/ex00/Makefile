@@ -4,7 +4,7 @@ SRC = Convert.cpp main.cpp
 HEADER = Convert.hpp
 OBJS = $(SRC:.cpp=.o)
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -O3 -g3
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -O3
 CC = c++
 RM = rm -rf
 

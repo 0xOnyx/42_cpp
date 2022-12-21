@@ -66,9 +66,7 @@ void Convert::print_float(std::string buff)
 		return ;
 	}
 	ss >> a;
-	if (ss.fail()
-		|| a > std::numeric_limits<float>::max()
-		|| a < std::numeric_limits<float>::min())
+	if (ss.fail())
 		throw std::exception();
 	else
 	{
