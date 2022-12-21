@@ -19,6 +19,7 @@ public:
 	Span	&operator=(const Span &span);
 	~Span();
 	void	fill_with_rand(unsigned int nbr);
+	void 	fill_iterator(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 private:
 	unsigned int		_n;
 	std::vector<int>	_tab;

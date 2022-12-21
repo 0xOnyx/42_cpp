@@ -74,3 +74,11 @@ void	Span::fill_with_rand(unsigned int nbr)
 	for (unsigned int i = 0; i < nbr; i++)
 		this->_tab.push_back(std::rand() % nbr + 1);
 }
+
+void 	Span::fill_iterator(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	std::vector<int>	tmp(begin, end);
+
+	if (tmp.size() > this->_n - this->_tab.size())
+		throw std::out_of_range("your fill more information i")
+}
