@@ -1,5 +1,5 @@
 #include <iostream>
-#include <queue>
+#include <stack>
 #include <sstream>
 #include <ctype.h>
 
@@ -19,7 +19,7 @@ int calc(int a, int b, char c)
 int	main(int argc, char **argv)
 {
 	char 				c;
-	std::queue<int>		q;
+	std::stack<int>		q;
 	std::istringstream	ss;
 	std::string 		line;
 
@@ -34,14 +34,14 @@ int	main(int argc, char **argv)
 				q.push(c - 48);
 			else if (c == '+' || c == '-' || c == '/' || c == '*')
 			{
-				int a = q.front(); q.pop();
-				int b = q.front(); q.pop();
+				int b = q.top(); q.pop();
+				int a = q.top(); q.pop();
 				q.push(calc(a, b, c));
 			}
 			else
 				throw std::runtime_error("bad element in argument");
 		}
-		std::cout << q.front() << std::endl;
+		std::cout << q.top() << std::endl;
 	}
 	catch(std::runtime_error const &e)
 	{

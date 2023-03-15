@@ -75,7 +75,10 @@ void test_case(std::map<std::tm, float, compare_tm> &data, const std::string& fi
 
 		flux >> t.tm_year >> c >> t.tm_mon >> c >> t.tm_mday >> c >> value;
 		if (flux.fail())
+		{
 			std::cout << "Error: bad input => " << line << std::endl;
+			continue ;
+		}
 		t.tm_mon -= 1;
 		if (value < 0)
 			std::cout << "Error: not a positive number." << std::endl;
